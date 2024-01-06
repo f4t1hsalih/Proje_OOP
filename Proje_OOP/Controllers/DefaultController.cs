@@ -31,6 +31,13 @@ namespace Proje_OOP.Controllers
             int sonuc = sayi1 + sayi2;
             return sonuc;
         }
+        int Cevre()
+        {
+            int kisa = 10;
+            int uzun = 20;
+            int cevre = 2 * (kisa + uzun);
+            return cevre;
+        }
 
         public IActionResult Index()
         {
@@ -43,6 +50,7 @@ namespace Proje_OOP.Controllers
         {
             Messages();
             ViewBag.t = Toplama();
+            ViewBag.c = Cevre();
             return View();
         }
     }
