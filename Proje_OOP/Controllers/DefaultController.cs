@@ -38,30 +38,40 @@ namespace Proje_OOP.Controllers
             int cevre = 2 * (kisa + uzun);
             return cevre;
         }
-
+        string Cumle()
+        {
+            string c = "Merhaba Asp.Net Core";
+            return c;
+        }
+        void MesajListesi(string parametre)
+        {
+            ViewBag.v = parametre;
+        }
+        void Kullanici(string username)
+        {
+            ViewBag.v = username;
+        }
         public IActionResult Index()
         {
             //view da viewBag leri görebilmek için Messages() Metodunu burada tanımlamak gerekir
             //Aksi Taktirde view da @viewBag.m1 olarak çağırsak bile gelmeyecektir
             Messages();
+            MesajListesi("Selamlarr");
+            Kullanici("Ayşe");
             return View();
-        }
-
-        string Cumle()
-        {
-            string c = "Merhaba Asp.Net Core";
-            return c;
         }
         public IActionResult Urunler()
         {
             Messages();
             ViewBag.t = Toplama();
             ViewBag.c = Cevre();
+            Kullanici("Mehmet");
             return View();
         }
         public IActionResult Musteriler()
         {
             ViewBag.cumle = Cumle();
+            Kullanici("Maral");
             return View();
         }
     }
