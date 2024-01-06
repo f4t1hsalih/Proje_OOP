@@ -24,10 +24,25 @@ namespace Proje_OOP.Controllers
             ViewBag.m2 = "Merhaba proje çok iyi duruyor";
             ViewBag.m3 = "Selamlar Hello Hi Bonjour";
         }
+        int Toplama()
+        {
+            int sayi1 = 20;
+            int sayi2 = 30;
+            int sonuc = sayi1 + sayi2;
+            return sonuc;
+        }
 
         public IActionResult Index()
         {
+            //view da viewBag leri görebilmek için Messages() Metodunu burada tanımlamak gerekir
+            //Aksi Taktirde view da @viewBag.m1 olarak çağırsak bile gelmeyecektir
             Messages();
+            return View();
+        }
+        public IActionResult Urunler()
+        {
+            Messages();
+            ViewBag.t = Toplama();
             return View();
         }
     }
