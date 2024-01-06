@@ -51,6 +51,11 @@ namespace Proje_OOP.Controllers
         {
             ViewBag.v = username;
         }
+        int Topla(int sayi1, int sayi2)
+        {
+            int sonuc = sayi1 + sayi2;
+            return sonuc;
+        }
         public IActionResult Index()
         {
             //view da viewBag leri görebilmek için Messages() Metodunu burada tanımlamak gerekir
@@ -58,6 +63,7 @@ namespace Proje_OOP.Controllers
             Messages();
             MesajListesi("Selamlarr");
             Kullanici("Ayşe");
+            ViewBag.sonuc = Topla(20, 35);
             return View();
         }
         public IActionResult Urunler()
