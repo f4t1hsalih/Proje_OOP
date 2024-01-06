@@ -46,11 +46,22 @@ namespace Proje_OOP.Controllers
             Messages();
             return View();
         }
+
+        string Cumle()
+        {
+            string c = "Merhaba Asp.Net Core";
+            return c;
+        }
         public IActionResult Urunler()
         {
             Messages();
             ViewBag.t = Toplama();
             ViewBag.c = Cevre();
+            return View();
+        }
+        public IActionResult Musteriler()
+        {
+            ViewBag.cumle = Cumle();
             return View();
         }
     }
