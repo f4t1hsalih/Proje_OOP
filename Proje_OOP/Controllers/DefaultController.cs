@@ -18,5 +18,17 @@ namespace Proje_OOP.Controllers
             Class1 c = new Class1();
             c.Topla();
         }
+        void Messages()
+        {
+            ViewBag.m1 = "Merhaba bu bir core projesi";
+            ViewBag.m2 = "Merhaba proje çok iyi duruyor";
+            ViewBag.m3 = "Selamlar Hello Hi Bonjour";
+        }
+
+        public IActionResult Index()
+        {
+            Messages();
+            return View();
+        }
     }
 }
