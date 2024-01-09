@@ -3,8 +3,8 @@
     public class Sehirler:Bayrak
     {
         public int ID { get; set; }
-        public string Ad { get; set; }
+        public string Ad { get; set; } = "Bilinmiyor";
         public int Nufus { get; set; }
-        public string Ulke { get; set; }
+        public string Ulke { get; set; } = "Bilinmiyor";
     }
 }
