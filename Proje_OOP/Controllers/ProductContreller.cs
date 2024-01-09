@@ -43,6 +43,15 @@ namespace Proje_OOP.Controllers
             var value = context.Products.Where(x => x.ID == id).FirstOrDefault();
             return View(value);
         }
-
+        [HttpPost]
+        public IActionResult UpdateProduct(Product p)
+        {
+            var value = context.Products.Where(x => x.ID == p.ID).FirstOrDefault();
+            value.Name = p.Name;
+            value.Price = p.Price;
+            value.Stock = p.Stock;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
