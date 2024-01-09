@@ -14,16 +14,18 @@
         <th>Ürün Adı</th>
         <th>Fiyat</th>
         <th>Stok</th>
+        <th>Güncelle</th>
         <th>Sil</th>
     </tr>
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
-            <td>@item.ID</td>
+            <td align="center">@item.ID</td>
             <td>@item.Name</td>
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            <td><a href="/ProductContreller/DeleteProduct/@item.ID">Sil</a></td>
+            <td align="center"><a href="/ProductContreller/UpdateProduct/@item.ID" class="btn btn-success">Güncelle</a></td>
+            <td align="center"><a href="/ProductContreller/DeleteProduct/@item.ID" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 </table>

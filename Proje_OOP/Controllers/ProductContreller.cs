@@ -23,16 +23,26 @@ namespace Proje_OOP.Controllers
         public IActionResult AddProduct(Product p)
         {
             context.Add(p);
+            //Değişiklikleri kaydetmeye yarar
             context.SaveChanges();
+            //Sayfayı Yönlendirmek için kullanılır
             return RedirectToAction("Index");
         }
 
         public IActionResult DeleteProduct(int id)
         {
-            var values =context.Products.Where(x=>x.ID == id).FirstOrDefault();
+            var values = context.Products.Where(x => x.ID == id).FirstOrDefault();
             context.Remove(values);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult UpdateProduct(int id)
+        {
+            var value = context.Products.Where(x => x.ID == id).FirstOrDefault();
+            return View(value);
+        }
+
     }
 }
