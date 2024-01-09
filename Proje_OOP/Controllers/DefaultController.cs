@@ -88,21 +88,31 @@ namespace Proje_OOP.Controllers
             sehirler.Ulke = "Ukrayna";
             sehirler.Ad = "Kiev";
             sehirler.Nufus = 1000000;
+            sehirler.Renk1 = "Mavi";
+            sehirler.Renk2 = "Sarı";
 
             ViewBag.v1 = sehirler.ID;
             ViewBag.v2 = sehirler.Ulke;
             ViewBag.v3 = sehirler.Ad;
             ViewBag.v4 = sehirler.Nufus;
+            ViewBag.v5 = sehirler.Renk1;
+            ViewBag.v6 = sehirler.Renk2;
+            ViewBag.v7 = sehirler.Renk3;
 
             sehirler.ID = 3;
             sehirler.Ulke = "Makedonya";
             sehirler.Ad = "Üsküp";
             sehirler.Nufus = 500000;
-            
+            sehirler.Renk1 = "Kırmızı";
+            sehirler.Renk2 = "Sarı";
+
             ViewBag.z1 = sehirler.ID;
             ViewBag.z2 = sehirler.Ulke;
             ViewBag.z3 = sehirler.Ad;
             ViewBag.z4 = sehirler.Nufus;
+            ViewBag.z5 = sehirler.Renk1;
+            ViewBag.z6 = sehirler.Renk2;
+            ViewBag.z7 = sehirler.Renk3;
 
             return View();
         }

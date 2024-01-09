@@ -1,6 +1,6 @@
 ﻿namespace Proje_OOP.Examples
 {
-    public class Sehirler
+    public class Sehirler:Bayrak
     {
         public int ID { get; set; }
         public string Ad { get; set; }
