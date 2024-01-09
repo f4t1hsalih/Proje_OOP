@@ -4,7 +4,7 @@ using Proje_OOP.ProjeContext;
 
 namespace Proje_OOP.Controllers
 {
-    public class ProductContreller : Controller
+    public class ProductController : Controller
     {
         Context context = new Context();
 

@@ -38,7 +38,7 @@ namespace Proje_OOP.Controllers
         public IActionResult DeleteCustomer(int id)
         {
             //Silinecek değeri alıp value isimli değişkene atar
-            var value = context.Customers.Where(x => x.CustomerID == id).FirstOrDefault();
+            var value = context.Customers.Where(x => x.ID == id).FirstOrDefault();
             //Değeri siler
             context.Remove(value);
             //Değişiklikleri kaydeder
@@ -52,7 +52,7 @@ namespace Proje_OOP.Controllers
         [HttpGet]
         public IActionResult UpdateCustomer(int id)
         {
-            var value = context.Customers.Where(x => x.CustomerID == id).FirstOrDefault();
+            var value = context.Customers.Where(x => x.ID == id).FirstOrDefault();
             return View(value);
         }
         //Post işlemi gerçekleşince yapılacaklar
@@ -60,11 +60,11 @@ namespace Proje_OOP.Controllers
         public IActionResult UpdateCustomer(Customer c)
         {
             //Üzerinde değişiklik yapılacak veririyi alır
-            var value = context.Customers.Where(x => x.CustomerID == c.CustomerID).FirstOrDefault();
+            var value = context.Customers.Where(x => x.ID == c.ID).FirstOrDefault();
             //Verinin CustomerCity Prop'una Sınıftan gelen(Güncelleme sayfasından gelen) değeri yazar
-            value.CustomerCity = c.CustomerCity;
+            value.City = c.City;
             //Verinin CustomerName Prop'una Sınıftan gelen(Güncelleme sayfasından gelen) değeri yazar
-            value.CustomerName = c.CustomerName;
+            value.Name = c.Name;
             //Değişiklikleri kaydeder
             context.SaveChanges();
             //Index Sayfasına yönlendirir
