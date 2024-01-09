@@ -3,8 +3,10 @@
     Layout = null;
 }
 
-<h1>Burası Şehir Paneli</h1>
-<table>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<h1 align="center">Burası Şehir Paneli</h1>
+<table class="table table-bordered">
     <tr>
         <th>#</th>
         <th>Ülke</th>
@@ -23,4 +25,18 @@
         <td>@ViewBag.v3</td>
         <td>@ViewBag.v4</td>
     </tr>
+    <tr>
+        <td>@ViewBag.z1</td>
+        <td>@ViewBag.z2</td>
+        <td>@ViewBag.z3</td>
+        <td>@ViewBag.z4</td>
+    </tr>
 </table>
+
+<a href="/Default/Index" class="btn btn-info">Indexe Git</a> 
+<br />
+<a href="/default/Urunler/" class="btn btn-danger">Ürünlere Git</a>
+<br />
+<a href="/Default/Musteriler" class="btn btn-dark">Müşteriler Sayfası</a>
+<br />
+

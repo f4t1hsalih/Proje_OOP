@@ -85,14 +85,24 @@ namespace Proje_OOP.Controllers
             Sehirler sehirler = new Sehirler();
 
             sehirler.ID = 2;
+            sehirler.Ulke = "Ukrayna";
             sehirler.Ad = "Kiev";
             sehirler.Nufus = 1000000;
-            sehirler.Ulke = "Ukrayna";
 
             ViewBag.v1 = sehirler.ID;
             ViewBag.v2 = sehirler.Ulke;
             ViewBag.v3 = sehirler.Ad;
             ViewBag.v4 = sehirler.Nufus;
+
+            sehirler.ID = 3;
+            sehirler.Ulke = "Makedonya";
+            sehirler.Ad = "Üsküp";
+            sehirler.Nufus = 500000;
+            
+            ViewBag.z1 = sehirler.ID;
+            ViewBag.z2 = sehirler.Ulke;
+            ViewBag.z3 = sehirler.Ad;
+            ViewBag.z4 = sehirler.Nufus;
 
             return View();
         }
