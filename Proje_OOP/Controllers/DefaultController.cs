@@ -80,5 +80,21 @@ namespace Proje_OOP.Controllers
             Kullanici("Maral");
             return View();
         }
+        public IActionResult Deneme()
+        {
+            Sehirler sehirler = new Sehirler();
+
+            sehirler.ID = 2;
+            sehirler.Ad = "Kiev";
+            sehirler.Nufus = 1000000;
+            sehirler.Ulke = "Ukrayna";
+
+            ViewBag.v1 = sehirler.ID;
+            ViewBag.v2 = sehirler.Ulke;
+            ViewBag.v3 = sehirler.Ad;
+            ViewBag.v4 = sehirler.Nufus;
+
+            return View();
+        }
     }
 }
