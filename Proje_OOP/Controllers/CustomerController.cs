@@ -26,12 +26,22 @@ namespace Proje_OOP.Controllers
         [HttpPost]
         public IActionResult AddCustomer(Customer c)
         {
-            //c den gelen değerleri ekler
-            context.Add(c);
-            //Değişiklikleri kaydeder
-            context.SaveChanges();
-            //Index Action'una (Index Sayfası) yönlendirir
-            return RedirectToAction("Index");
+            //Kayıt yapmadan önce bazı şartları kontrol eder şartlar karşılanıyor ise kayıt yapar
+            if (c.Name.Length >= 3 && c.City != "" && c.City.Length >= 3)
+            {
+                //c den gelen değerleri ekler
+                context.Add(c);
+                //Değişiklikleri kaydeder
+                context.SaveChanges();
+                //Index Action'una (Index Sayfası) yönlendirir
+                return RedirectToAction("Index");
+            }
+            //Şartlar karşılanmıyor ise aynı sayfayı tekrar açar
+            else
+            {
+                return View();
+            }
+
         }
 
         //Silme İşlemi
@@ -59,16 +69,25 @@ namespace Proje_OOP.Controllers
         [HttpPost]
         public IActionResult UpdateCustomer(Customer c)
         {
-            //Üzerinde değişiklik yapılacak veririyi alır
-            var value = context.Customers.Where(x => x.ID == c.ID).FirstOrDefault();
-            //Verinin CustomerCity Prop'una Sınıftan gelen(Güncelleme sayfasından gelen) değeri yazar
-            value.City = c.City;
-            //Verinin CustomerName Prop'una Sınıftan gelen(Güncelleme sayfasından gelen) değeri yazar
-            value.Name = c.Name;
-            //Değişiklikleri kaydeder
-            context.SaveChanges();
-            //Index Sayfasına yönlendirir
-            return RedirectToAction("Index");
+            //Kayıt yapmadan önce bazı şartları kontrol eder şartlar karşılanıyor ise güncelleme yapar
+            if (c.Name.Length >= 3 && c.City != "" && c.City.Length >= 3)
+            {
+                //Üzerinde değişiklik yapılacak veririyi alır
+                var value = context.Customers.Where(x => x.ID == c.ID).FirstOrDefault();
+                //Verinin CustomerCity Prop'una Sınıftan gelen(Güncelleme sayfasından gelen) değeri yazar
+                value.City = c.City;
+                //Verinin CustomerName Prop'una Sınıftan gelen(Güncelleme sayfasından gelen) değeri yazar
+                value.Name = c.Name;
+                //Değişiklikleri kaydeder
+                context.SaveChanges();
+                //Index Sayfasına yönlendirir
+                return RedirectToAction("Index");
+            }
+            //Şartlar karşılanmıyor ise aynı sayfayı tekrar açar
+            else
+            {
+                return View(); 
+            }
         }
     }
 }
